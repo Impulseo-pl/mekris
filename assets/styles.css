@@ -1847,3 +1847,66 @@ footer{view-transition-name:mt-foot}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
 :root{--muted:#62676F;}
+
+/* === SKÓRKA „KLINDWORTH" (prośba Szymona 14.10.2026: wygląd jak klindworthroofing.com) ===
+   Ciepły beż + grafit + piaskowy akcent, szeryfowe nagłówki wersalikami, przyciski-pigułki z obrysem,
+   hero dzielone: tekst na beżu, zdjęcie w kadrze-strzałce po prawej, ciemne sekcje CTA/stopka. */
+:root{--accent:#AC9376;--accent-d:#8A7359;--accent-soft:rgba(172,147,118,.14);--paper:#EDE9E2;--paper-2:#E4DED4;--paper-3:#D9D1C4;
+  --ink:#24262B;--ink-soft:#3E4046;--muted:#5E5C58;--line:rgba(36,38,43,.16);--dark:#1D1E22;
+  --font-display:'DM Serif Display',Georgia,serif;--accent-text:#7A6449}
+body{background:var(--paper)}
+h1,h2,h3,.hf-title{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:1.02}
+h3{text-transform:none}
+.eyebrow,.hf-kicker{font-family:var(--font-body);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+.btn{border-radius:999px;font-weight:500;box-shadow:none}
+.btn-accent,.nav .nav-links a.btn-accent{background:transparent;color:var(--ink);border:1px solid var(--accent)}
+.btn-accent:hover,.nav .nav-links a.btn-accent:hover{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:none}
+.nav{background:var(--paper)}
+.nav.is-stuck{background:rgba(237,233,226,.96)}
+.brand-logo{border-radius:6px}
+/* hero dzielone */
+.hero-fach{background:var(--paper);min-height:clamp(560px,90svh,880px)}
+.hero-fach::after{display:none}
+.hf-photo{left:auto;right:0;width:56%;clip-path:polygon(32% 0,100% 0,100% 100%,32% 100%,0 50%);background:var(--paper-2)}
+.hf-kicker,.hf-title,.hf-lead,.hf-phone,.hf-trust{text-shadow:none}
+.hf-panel{color:var(--ink)}
+.hf-inner{max-width:30rem}
+.hf-kicker{color:var(--accent-text)}
+.hf-kicker::before{display:none}
+.hf-title{color:var(--ink);font-size:clamp(2.6rem,1.8rem + 3.4vw,4.6rem)}
+.hf-lead{color:var(--ink-soft)}
+.hf-phone{display:none}
+.hf-actions{margin-top:var(--space-6)}
+.hf-ghost{color:var(--ink);border-color:var(--accent)}
+.hf-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media(max-width:820px){
+  .hero-fach{flex-direction:column;align-items:stretch;min-height:0}
+  .hf-photo{position:relative;width:100%;height:52svh;clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);order:-1}
+  .hf-panel{padding:var(--space-6) 0 var(--space-7)}
+}
+/* sekcje */
+.fach-promise{background:var(--paper-2)}
+.gateway{border-radius:0}
+.gateway .g-ttl{font-family:var(--font-display);text-transform:uppercase}
+.tile,.tile img{border-radius:0}
+.fu-name{font-family:var(--font-display);text-transform:uppercase}
+.opinie,.cta,footer{background:var(--dark);color:#fff}
+.opinie h2,.opinie .head p{color:#fff}
+.opinie .head p{opacity:.8}
+.cta::before{display:none}
+.cta .btn-light{background:transparent;color:#fff;border:1px solid var(--accent)}
+.cta .btn-light:hover{background:var(--accent);color:var(--dark)}
+.cta .eyebrow,.opinie .eyebrow{color:var(--accent)}
+/* nav na beżowym hero strony głównej: ciemne napisy od razu (podstrony z ciemnym nagłówkiem bez zmian) */
+body:has(.hero-fach) .nav:not(.nav-solid)::after{display:none}
+body:has(.hero-fach) .nav:not(.nav-solid) .nav-links a:not(.btn-accent){color:var(--ink-soft)}
+body:has(.hero-fach) .nav:not(.nav-solid) .nav-links a:not(.btn-accent)::after{background:var(--accent-d)}
+body:has(.hero-fach) .nav:not(.nav-solid) .nav-toggle span{background:var(--ink)}
+@media(min-width:681px){
+  body:has(.hero-fach) .nav:not(.nav-solid) .nav-links a.btn-accent{color:var(--ink);border-color:var(--accent)}
+  body:has(.hero-fach) .nav:not(.nav-solid) .nav-links a.btn-accent:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+}
+.nav .nav-links a.btn-accent{border-radius:999px}
+.nav.nav-solid .nav-links a.btn-accent{background:transparent;color:var(--ink);border-color:var(--accent)}
+.nav.nav-solid .nav-links a.btn-accent:hover{background:var(--ink);color:#fff;border-color:var(--ink);filter:none}
+@media(max-width:820px){ .hero-fach .hf-photo{margin-top:0} }
